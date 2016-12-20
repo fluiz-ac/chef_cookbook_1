@@ -16,3 +16,11 @@ describe port(80) do
   it { should_not be_listening }
   skip 'This is an example test, replace with your own test.'
 end
+
+describe package('tree') do
+	it {should be_installed}
+end
+
+describe file('/etc/motd') do
+	its('content') {should match(/Property of.*/)}
+end
